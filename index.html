@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+		/* 리셋 CSS */
+		* {margin:0;padding:0;box-sizing:border-box;}
+		ul, li {list-style:none;}
+		
+		/* 슬라이드 Style */
+		.slidebox {max-width:100%;margin:0 auto;}
+		.slidebox .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
+		.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;width:100%;transition:all 1s;}
+		.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+		.slidebox .slidelist .slideitem > a img {max-width:100%;}
+		.slidebox .slidelist .slideitem > a label {position:absolute;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+		.slidebox .slidelist .slideitem > a label.prev {left:20px;background:#333 url('./img/left-arrow.png') center center / 50% no-repeat;}
+		.slidebox .slidelist .slideitem > a label.next {right:20px;background:#333 url('./img/right-arrow.png') center center / 50% no-repeat;}
+		
+		
+		[name="slide"] {display:none;}
+		#slide01:checked ~ .slidelist .slideitem {transform:translateX(0);animation:slide01 100s infinite;}
+		#slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 100s infinite;}
+		#slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 100s infinite;}
+		#slide04:checked ~ .slidelist .slideitem {transform:translateX(-300%);animation:slide04 100s infinite;}
+		#slide05:checked ~ .slidelist .slideitem {transform:translateX(-400%);animation:slide05 100s infinite;}
+		
+		@keyframes slide01 {
+		0% {left:0%;}
+		15% {left:0%;}
+		20% {left:-100%;}
+		35% {left:-100%;}
+		40% {left:-200%;}
+		55% {left:-200%;}
+		60% {left:-300%;}
+		75% {left:-300%;}
+		80% {left:-400%}
+		95% {left:-400%;}
+		100% {left:0;}
+		}
+
+		@keyframes slide02 {
+		0% {left:-100%;}
+		15% {left:-100%;}
+		20% {left:0%;}
+		35% {left:0%;}
+		40% {left:100%;}
+		55% {left:100%;}
+		60% {left:200%;}
+		75% {left:200%;}
+		80% {left:300%}
+		95% {left:300%;}
+		100% {left:-100;}
+		}
+
+		@keyframes slide03 {
+		0% {left:-200%;}
+		15% {left:-200%;}
+		20% {left:-100%;}
+		35% {left:-100%;}
+		40% {left:0%;}
+		55% {left:0%;}
+		60% {left:100%;}
+		75% {left:100%;}
+		80% {left:200%}
+		95% {left:200%;}
+		100% {left:-200;}
+		}
+
+		@keyframes slide04 {
+		0% {left:-300%;}
+		15% {left:-300%;}
+		20% {left:-200%;}
+		35% {left:-200%;}
+		40% {left:-100%;}
+		55% {left:-100%;}
+		60% {left:0%;}
+		75% {left:0%;}
+		80% {left:100%}
+		95% {left:100%;}
+		100% {left:-300;}
+		}
+
+		@keyframes slide05 {
+		0% {left:-400%;}
+		15% {left:-400%;}
+		20% {left:-300%;}
+		35% {left:-300%;}
+		40% {left:-200%;}
+		55% {left:-200%;}
+		60% {left:-100%;}
+		75% {left:-100%;}
+		80% {left:0%}
+		95% {left:0%;}
+		100% {left:-400;}
+		}
+
+
+		
+		</style>
+   
+
+    <title>Sketch</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.min.js"></script>
+    
+  </head>
+
+  <body>
+
+	<div class="slidebox">
+		<input type="radio" name="slide" id="slide01" checked>
+		<input type="radio" name="slide" id="slide02">
+		<input type="radio" name="slide" id="slide03">
+		<input type="radio" name="slide" id="slide04">
+		<input type="radio" name="slide" id="slide05">
+		<ul class="slidelist">
+			<li class="slideitem">
+				<div>
+					<label for="slide05" class="left"></label>
+					<label for="slide02" class="right"></label>
+					<a><center><iframe src="index1.html" title="" width=100% height=800 frameborder='0' scrolling="no" style="overflow-y:hidden"></iframe></center>></a>
+				</div>		
+			</li>
+			<li class="slideitem">
+				<div>
+					<label for="slide01" class="left"></label>
+					<label for="slide03" class="right"></label>
+					<a><center><iframe src="index2.html" title="" width=100% height=800 frameborder='0' scrolling="no" style="overflow-y:hidden"></iframe></center></a>
+				</div>		
+			</li>
+			<li class="slideitem">
+				<div>
+					<label for="slide02" class="left"></label>
+					<label for="slide04" class="right"></label>
+					<a><center><iframe src="index3.html" title="" width=100% height=800 frameborder='0' scrolling="no" style="overflow-y:hidden"></iframe></center></a>
+				</div>		
+			</li>
+			<li class="slideitem">
+				<div>
+					<label for="slide03" class="left"></label>
+					<label for="slide05" class="right"></label>
+					<a><center><iframe src="index4.html" title="" width=100% height=800 frameborder='0' scrolling="no" style="overflow-y:hidden"></iframe></center></a>
+				</div>		
+			</li>
+			<li class="slideitem">
+				<div>
+					<label for="slide04" class="left"></label>
+					<label for="slide01" class="right"></label>
+					<a><center><iframe src="index5.html" title="" width=100% height=720 frameborder='0' scrolling="no" style="overflow-y:hidden"></iframe></center></a>
+				</div>		
+			</li>
+		</ul>
+  </body>
+</html>
